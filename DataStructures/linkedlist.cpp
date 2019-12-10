@@ -274,6 +274,23 @@ void PrintList()
 
 };
 
+SinglyLinkedList inverse(SinglyLinkedList list)
+{
+    node *current = list.head;
+    node *prev = NULL, *next = NULL;
+    while (current != NULL)
+    {
+        next = current->next;
+        current->next = prev;
+
+        prev = current;
+        current = next;
+    }
+
+    list.head = prev;
+    return list;
+}
+
 int main()
 {
     SinglyLinkedList a;
@@ -305,6 +322,8 @@ int main()
     a.PopBack();
     a.PrintList();
     cout << "List size: " << a.size << endl;
+    SinglyLinkedList reversed_list = inverse(a);
+    reversed_list.PrintList();
     cout << "DONE!" << endl;
     return 0;
 }
