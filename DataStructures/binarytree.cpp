@@ -123,8 +123,6 @@ bst_node *findMin(bst_node* leaf)
 
 }
 
-
-
 bst_node *remove(int item)
 {
     return remove(root, item);
@@ -188,9 +186,6 @@ int maxDepth(bst_node* leaf)
     }
 }
 
-
-
-
 void INorder_traversal(bst_node *root_node)
 {
     if (root_node != NULL)
@@ -220,14 +215,10 @@ void POSTorder_traversal(bst_node *root_node)
         cout << root_node->data << endl;
     }
 }
-
-
 };
-
 
 int main()
 {
-
     bst my_tree;
     my_tree.insert(10);
     my_tree.insert(9);
@@ -243,6 +234,5 @@ int main()
     cout << "POST" << endl;
     my_tree.POSTorder_traversal(my_tree.root);
     cout << "Max depth: " << my_tree.maxDepth(my_tree.root) << endl;
-
     return 0;
 }
